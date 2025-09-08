@@ -16,16 +16,28 @@
       />
       <br />
       <label for="password">Senha</label>
-      <input
-        class="login-input"
-        type="password"
-        id="password"
-        name="password"
-        placeholder="Digite sua senha"
-        required
-      />
+      <div class="password-container">
+        <input
+          class="login-input password-input"
+          [type]="showPassword ? 'text' : 'password'"
+          id="password"
+          name="password"
+          placeholder="Digite sua senha"
+          required
+        />
+        <button
+          type="button"
+          class="password-toggle"
+          (click)="togglePassword()"
+        >
+          <i class="{{ showPassword ? 'bi bi-eye' : 'bi bi-eye-slash' }}"></i>
+        </button>
+      </div>
       <br />
       <button class="login-button" type="submit">Entrar</button>
+      <p class="login-link-text">
+        Não tem uma conta? <a class="login-link" href="#">Cadastre-se</a>
+      </p>
     </form>
   </div>
 </div>
