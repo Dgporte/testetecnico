@@ -1,0 +1,43 @@
+<div class="login-container">
+  <div class="stars"></div>
+  <div class="stars2"></div>
+  <div class="stars3"></div>
+  <div class="login-content">
+    <h2 class="login-title">Login</h2>
+    <form class="login-form">
+      <label for="email">Email</label>
+      <input
+        class="login-input"
+        type="email"
+        id="email"
+        name="email"
+        placeholder="Digite seu email"
+        required
+      />
+      <br />
+      <label for="password">Senha</label>
+      <div class="password-container">
+        <input
+          class="login-input password-input"
+          [type]="showPassword ? 'text' : 'password'"
+          id="password"
+          name="password"
+          placeholder="Digite sua senha"
+          required
+        />
+        <button
+          type="button"
+          class="password-toggle"
+          (click)="togglePassword()"
+        >
+          <i class="{{ showPassword ? 'bi bi-eye' : 'bi bi-eye-slash' }}"></i>
+        </button>
+      </div>
+      <br />
+      <button class="login-button" type="submit">Entrar</button>
+      <p class="login-link-text">
+        Não tem uma conta? <a class="login-link" href="#">Cadastre-se</a>
+      </p>
+    </form>
+  </div>
+</div>
