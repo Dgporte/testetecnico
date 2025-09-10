@@ -1,0 +1,109 @@
+<div class="lista-container">
+  <div class="stars"></div>
+  <div class="stars2"></div>
+  <div class="stars3"></div>
+  <div class="lista-content">
+    <h2 class="lista-title">Funcionários Cadastrados</h2>
+
+    <div class="search-container">
+      <div class="search-box">
+        <input
+          type="text"
+          class="search-input"
+          placeholder="Pesquisar por nome, email, CPF ou cargo..."
+          [(ngModel)]="searchTerm"
+          (input)="onSearchInput($event)"
+          (keyup.enter)="onSearchSubmit()"
+        />
+        <button class="search-button" (click)="onSearchSubmit()">
+          <i class="bi bi-search"></i>
+        </button>
+      </div>
+      <button class="btn-adicionar-header" (click)="adicionarFuncionario()">
+        <i class="bi bi-plus-circle"></i> Novo Funcionário
+      </button>
+    </div>
+
+    <div class="loading" *ngIf="isLoading">
+      <i class="bi bi-arrow-clockwise"></i>
+      <span>Carregando funcionários...</span>
+    </div>
+
+    <div
+      class="funcionarios-grid"
+      *ngIf="!isLoading && funcionarios.length > 0"
+    >
+      <div class="funcionario-card" *ngFor="let funcionario of funcionarios">
+        <div class="funcionario-header">
+          <div class="funcionario-foto">
+            <img
+              [src]="
+                funcionario.foto ||
+                'data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iNDAiIGhlaWdodD0iNDAiIHZpZXdCb3g9IjAgMCA0MCA0MCIgZmlsbD0ibm9uZSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KPGNpcmNsZSBjeD0iMjAiIGN5PSIyMCIgcj0iMjAiIGZpbGw9IiM2ODcwN0EiLz4KPGNpcmNsZSBjeD0iMjAiIGN5PSIxNiIgcj0iNiIgZmlsbD0id2hpdGUiLz4KPHBhdGggZD0iTTEwIDMwQzEwIDI2LjY4NjMgMTMuMTM0IDI0IDIwIDI0QzI2Ljg2NiAyNCAzMCAyNi42ODYzIDMwIDMwVjMySDEwVjMwWiIgZmlsbD0id2hpdGUiLz4KPC9zdmc+'
+              "
+              [alt]="funcionario.nome"
+            />
+          </div>
+          <div class="funcionario-info">
+            <h3 class="funcionario-nome">{{ funcionario.nome }}</h3>
+            <p class="funcionario-cargo">{{ funcionario.cargo }}</p>
+          </div>
+        </div>
+
+        <div class="funcionario-detalhes">
+          <div class="detalhe-item">
+            <i class="bi bi-envelope"></i>
+            <span>{{ funcionario.email }}</span>
+          </div>
+
+          <div class="detalhe-item">
+            <i class="bi bi-telephone"></i>
+            <span>{{ funcionario.telefone }}</span>
+          </div>
+
+          <div class="detalhe-item">
+            <i class="bi bi-calendar"></i>
+            <span>{{ formatarData(funcionario.dataNascimento) }}</span>
+          </div>
+
+          <div class="detalhe-item">
+            <i class="bi bi-person-badge"></i>
+            <span>{{ funcionario.cpf }}</span>
+          </div>
+
+          <div class="detalhe-item">
+            <i class="bi bi-currency-dollar"></i>
+            <span>{{ formatarSalario(funcionario.salario) }}</span>
+          </div>
+
+          <div class="detalhe-item">
+            <i class="bi bi-geo-alt"></i>
+            <span>{{ funcionario.cidade }}, {{ funcionario.estado }}</span>
+          </div>
+        </div>
+
+        <div class="funcionario-acoes">
+          <button
+            class="btn-editar"
+            (click)="editarFuncionario(funcionario.id!)"
+          >
+            <i class="bi bi-pencil"></i> Editar
+          </button>
+          <button class="btn-excluir" (click)="excluirFuncionario(funcionario)">
+            <i class="bi bi-trash"></i> Excluir
+          </button>
+        </div>
+      </div>
+    </div>
+
+    <div class="lista-vazia" *ngIf="!isLoading && funcionarios.length === 0">
+      <i class="bi bi-people"></i>
+      <h3>Nenhum funcionário encontrado</h3>
+      <p *ngIf="searchTerm">Tente pesquisar com outros termos</p>
+      <p *ngIf="!searchTerm">Adicione funcionários para vê-los aqui</p>
+      <button class="btn-adicionar" (click)="adicionarFuncionario()">
+        <i class="bi bi-plus-circle"></i> Cadastrar Funcionário
+      </button>
+    </div>
+  </div>
+</div>
