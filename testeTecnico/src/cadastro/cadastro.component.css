@@ -120,6 +120,30 @@
   overflow-y: auto;
 }
 
+.cadastro-content::-webkit-scrollbar {
+  width: 8px;
+}
+
+.cadastro-content::-webkit-scrollbar-track {
+  background: rgba(255, 255, 255, 0.1);
+  border-radius: 10px;
+}
+
+.cadastro-content::-webkit-scrollbar-thumb {
+  background: rgba(255, 255, 255, 0.3);
+  border-radius: 10px;
+  transition: background 0.3s ease;
+}
+
+.cadastro-content::-webkit-scrollbar-thumb:hover {
+  background: rgba(255, 255, 255, 0.5);
+}
+
+.cadastro-content {
+  scrollbar-width: thin;
+  scrollbar-color: rgba(255, 255, 255, 0.3) rgba(255, 255, 255, 0.1);
+}
+
 .cadastro-form {
   color: white;
   font-family: "Poppins", sans-serif;
@@ -210,6 +234,12 @@
   transition: color 0.3s ease;
 }
 
+.button-group {
+  display: flex;
+  gap: 10px;
+  margin-top: 10px;
+}
+
 .cadastro-button {
   background-color: #1570ef;
   color: white;
@@ -218,13 +248,35 @@
   padding: 12px 15px;
   cursor: pointer;
   font-family: "Poppins", sans-serif;
-  width: 100%;
+  flex: 1;
   transition: background-color 0.3s ease;
-  margin-top: 10px;
 }
 
 .cadastro-button:hover {
   background-color: #0d4797;
+}
+
+.cadastro-button:disabled {
+  background-color: #6c757d;
+  cursor: not-allowed;
+}
+
+.cadastro-button-secondary {
+  background-color: transparent;
+  color: rgba(255, 255, 255, 0.8);
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  border-radius: 4px;
+  padding: 12px 15px;
+  cursor: pointer;
+  font-family: "Poppins", sans-serif;
+  flex: 1;
+  transition: all 0.3s ease;
+}
+
+.cadastro-button-secondary:hover {
+  background-color: rgba(255, 255, 255, 0.1);
+  border-color: rgba(255, 255, 255, 0.5);
+  color: white;
 }
 
 .cadastro-link-text {
@@ -243,4 +295,45 @@
 
 .cadastro-link:hover {
   color: #0d4797;
+}
+
+.photo-preview {
+  position: relative;
+  margin-top: 10px;
+  margin-bottom: 15px;
+  display: inline-block;
+  border-radius: 12px;
+  overflow: hidden;
+  border: 2px solid rgba(255, 255, 255, 0.3);
+  box-shadow: 0 4px 15px rgba(79, 70, 229, 0.3);
+}
+
+.preview-image {
+  width: 120px;
+  height: 120px;
+  object-fit: cover;
+  display: block;
+}
+
+.remove-photo {
+  position: absolute;
+  top: 5px;
+  right: 5px;
+  background: rgba(239, 68, 68, 0.9);
+  color: white;
+  border: none;
+  border-radius: 50%;
+  width: 30px;
+  height: 30px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  font-size: 14px;
+}
+
+.remove-photo:hover {
+  background: #ef4444;
+  transform: scale(1.1);
 }

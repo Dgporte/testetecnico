@@ -4,12 +4,15 @@
   <div class="stars3"></div>
   <div class="cadastro-content">
     <h2 class="cadastro-title">Cadastro</h2>
-    <form class="cadastro-form">
+    <form
+      class="cadastro-form"
+      (submit)="cadastrarFuncionario(); $event.preventDefault()"
+    >
       <label for="ativo">Status</label>
       <select class="cadastro-input" id="ativo" name="ativo" required>
         <option value="">Selecione o status</option>
-        <option value="true">Ativo</option>
-        <option value="false">Inativo</option>
+        <option value="ativo">Ativo</option>
+        <option value="inativo">Inativo</option>
       </select>
       <br />
 
@@ -20,7 +23,18 @@
         id="foto"
         name="foto"
         accept="image/*"
+        (change)="onFileSelected($event)"
       />
+      <div *ngIf="selectedPhoto" class="photo-preview">
+        <img
+          [src]="selectedPhoto"
+          alt="Preview da foto"
+          class="preview-image"
+        />
+        <button type="button" class="remove-photo" (click)="removePhoto()">
+          <i class="bi bi-x-circle"></i>
+        </button>
+      </div>
       <br />
 
       <label for="nome">Nome completo</label>
@@ -45,12 +59,48 @@
       />
       <br />
 
-      <label for="dataContratacao">Data de contratação</label>
+      <label for="telefone">Telefone</label>
+      <input
+        class="cadastro-input"
+        type="text"
+        id="telefone"
+        name="telefone"
+        placeholder="(00) 00000-0000"
+        maxlength="15"
+        (input)="formatarTelefone($event)"
+        required
+      />
+      <br />
+
+      <label for="cargo">Cargo</label>
+      <input
+        class="cadastro-input"
+        type="text"
+        id="cargo"
+        name="cargo"
+        placeholder="Digite o cargo"
+        required
+      />
+      <br />
+
+      <label for="salario">Salário</label>
+      <input
+        class="cadastro-input"
+        type="text"
+        id="salario"
+        name="salario"
+        placeholder="R$ 0,00"
+        (input)="formatarSalario($event)"
+        required
+      />
+      <br />
+
+      <label for="dataAdmissao">Data de admissão</label>
       <input
         class="cadastro-input"
         type="date"
-        id="dataContratacao"
-        name="dataContratacao"
+        id="dataAdmissao"
+        name="dataAdmissao"
         required
       />
       <br />
@@ -62,22 +112,13 @@
         id="cpf"
         name="cpf"
         placeholder="000.000.000-00"
+        maxlength="14"
+        (input)="formatarCpf($event)"
         required
       />
       <br />
 
       <h3 class="endereco-title">Endereço</h3>
-
-      <label for="rua">Rua</label>
-      <input
-        class="cadastro-input"
-        type="text"
-        id="rua"
-        name="rua"
-        placeholder="Digite a rua"
-        required
-      />
-      <br />
 
       <label for="cep">CEP</label>
       <input
@@ -90,6 +131,38 @@
         (input)="formatarCep($event)"
         (blur)="onCepChange($event)"
         required
+      />
+      <br />
+
+      <label for="rua">Rua</label>
+      <input
+        class="cadastro-input"
+        type="text"
+        id="rua"
+        name="rua"
+        placeholder="Digite a rua"
+        required
+      />
+      <br />
+
+      <label for="numero">Número</label>
+      <input
+        class="cadastro-input"
+        type="text"
+        id="numero"
+        name="numero"
+        placeholder="Digite o número"
+        required
+      />
+      <br />
+
+      <label for="complemento">Complemento</label>
+      <input
+        class="cadastro-input"
+        type="text"
+        id="complemento"
+        name="complemento"
+        placeholder="Apartamento, bloco, etc. (opcional)"
       />
       <br />
 
@@ -148,9 +221,18 @@
       </select>
       <br />
 
-      <button class="cadastro-button" type="submit">
-        Cadastrar Funcionário
-      </button>
+      <div class="button-group">
+        <button class="cadastro-button" type="submit" [disabled]="isLoading">
+          {{ isLoading ? "Cadastrando..." : "Cadastrar Funcionário" }}
+        </button>
+        <button
+          class="cadastro-button-secondary"
+          type="button"
+          (click)="limparFormulario()"
+        >
+          Limpar
+        </button>
+      </div>
     </form>
   </div>
 </div>

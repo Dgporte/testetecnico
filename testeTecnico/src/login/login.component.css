@@ -23,7 +23,6 @@
   overflow: hidden;
 }
 
-/* Animação do gradiente de fundo */
 @keyframes gradientShift {
   0% {
     background-position: 0% 50%;
@@ -36,7 +35,6 @@
   }
 }
 
-/* Camadas de estrelas */
 .stars,
 .stars2,
 .stars3 {
@@ -87,7 +85,6 @@
   animation: twinkle 4s linear infinite;
 }
 
-/* Animações */
 @keyframes twinkle {
   0%,
   100% {
