@@ -6,10 +6,11 @@ import {
   Funcionario,
 } from '../app/services/firestore-funcionario.service';
 import { Router } from '@angular/router';
+import { NavbarComponent } from '../navbar/navbar.component';
 
 @Component({
   selector: 'app-cadastro',
-  imports: [],
+  imports: [NavbarComponent],
   templateUrl: './cadastro.component.html',
   styleUrl: './cadastro.component.css',
 })

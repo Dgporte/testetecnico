@@ -2,6 +2,7 @@ import { Component, OnInit, inject } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
 import { Router } from '@angular/router';
+import { NavbarComponent } from '../navbar/navbar.component';
 import {
   FirestoreFuncionarioService,
   Funcionario,
@@ -9,7 +10,7 @@ import {
 
 @Component({
   selector: 'app-lista-funcionarios',
-  imports: [CommonModule, FormsModule],
+  imports: [CommonModule, FormsModule, NavbarComponent],
   templateUrl: './lista-funcionarios.component.html',
   styleUrl: './lista-funcionarios.component.css',
 })
