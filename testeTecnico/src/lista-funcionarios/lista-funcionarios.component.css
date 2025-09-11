@@ -11,10 +11,10 @@
   animation: gradientShift 15s ease infinite;
   min-height: 100vh;
   width: 100vw;
-  margin: 0;
+  margin-top: 0;
   padding: 20px;
   border: none;
-  position: fixed;
+  position: relative;
   top: 0;
   left: 0;
   overflow-y: auto;
@@ -106,7 +106,7 @@
   position: relative;
   z-index: 10;
   max-width: 1200px;
-  margin: 0 auto;
+  margin: 70px auto;
 }
 
 .lista-title {
@@ -344,7 +344,7 @@
   background: #1570ef;
   border: none;
   color: white;
-  padding: 12px 15px;
+  padding: 15px 15px;
   cursor: pointer;
   transition: background-color 0.3s ease;
 }
@@ -358,7 +358,7 @@
   color: white;
   border: none;
   border-radius: 8px;
-  padding: 12px 20px;
+  padding: 14px 20px;
   font-family: "Poppins", sans-serif;
   font-weight: 500;
   cursor: pointer;
