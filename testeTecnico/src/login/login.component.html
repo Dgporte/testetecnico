@@ -3,18 +3,25 @@
   <div class="stars2"></div>
   <div class="stars3"></div>
   <div class="login-content">
-    <h2 class="login-title">Login</h2>
-    <form class="login-form">
+    <h2 class="login-title">Login Administrativo</h2>
+    <form class="login-form" (submit)="onLogin(); $event.preventDefault()">
+      <div *ngIf="errorMessage" class="error-message">
+        {{ errorMessage }}
+      </div>
+
       <label for="email">Email</label>
       <input
         class="login-input"
         type="email"
         id="email"
         name="email"
+        [(ngModel)]="email"
         placeholder="Digite seu email"
         required
+        [disabled]="isLoading"
       />
       <br />
+
       <label for="password">Senha</label>
       <div class="password-container">
         <input
@@ -22,22 +29,40 @@
           [type]="showPassword ? 'text' : 'password'"
           id="password"
           name="password"
+          [(ngModel)]="password"
           placeholder="Digite sua senha"
           required
+          [disabled]="isLoading"
         />
         <button
           type="button"
           class="password-toggle"
           (click)="togglePassword()"
+          [disabled]="isLoading"
         >
           <i class="{{ showPassword ? 'bi bi-eye' : 'bi bi-eye-slash' }}"></i>
         </button>
       </div>
       <br />
-      <button class="login-button" type="submit">Entrar</button>
-      <!-- <p class="login-link-text">
-        Não tem uma conta? <a class="login-link" href="#">Cadastre-se</a>
-      </p> -->
+
+      <div class="button-group">
+        <button class="login-button" type="submit" [disabled]="isLoading">
+          {{ isLoading ? "Entrando..." : "Entrar" }}
+        </button>
+        <button
+          class="login-button-secondary"
+          type="button"
+          (click)="limparFormulario()"
+          [disabled]="isLoading"
+        >
+          Limpar
+        </button>
+      </div>
     </form>
+
+    <div class="admin-info">
+      <p><strong>Acesso Administrativo</strong></p>
+      <p>Apenas administradores autorizados podem acessar o sistema.</p>
+    </div>
   </div>
 </div>

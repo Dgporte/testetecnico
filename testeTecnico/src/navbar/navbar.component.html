@@ -1,9 +1,8 @@
 <div class="navbar-container">
-  <div class="navbar-logo">Logo</div>
+  <div class="navbar-logo">Sistema RH</div>
   <div class="navbar-links">
-    <a href="../cadastro/cadastro.component.html">Cadastro</a>
-    <a href="../lista-funcionarios/lista-funcionarios.component.html"
-      >Lista Funcionarios</a
-    >
+    <a routerLink="/cadastro">Cadastro</a>
+    <a routerLink="/lista-funcionarios">Lista Funcionários</a>
+    <button class="logout-button" (click)="logout()">Sair</button>
   </div>
 </div>
