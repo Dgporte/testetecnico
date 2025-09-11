@@ -1,9 +1,9 @@
 <div class="navbar-container">
-  <div class="navbar-logo">Logo</div>
   <div class="navbar-links">
-    <a href="../cadastro/cadastro.component.html">Cadastro</a>
-    <a href="../lista-funcionarios/lista-funcionarios.component.html"
-      >Lista Funcionarios</a
-    >
+    <a routerLink="/cadastro"><i class="bi bi-person-plus"></i></a>
+    <a routerLink="/lista-funcionarios"><i class="bi bi-card-list"></i></a>
+    <button class="logout-button" (click)="logout()">
+      <i class="bi bi-box-arrow-left"></i>
+    </button>
   </div>
 </div>

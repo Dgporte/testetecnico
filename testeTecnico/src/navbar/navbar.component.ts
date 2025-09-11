@@ -1,11 +1,23 @@
 import { Component } from '@angular/core';
+import { CommonModule } from '@angular/common';
+import { RouterModule } from '@angular/router';
+import { AuthService } from '../app/services/auth.service';
 
 @Component({
   selector: 'app-navbar',
   standalone: true,
+  imports: [CommonModule, RouterModule],
   templateUrl: './navbar.component.html',
   styleUrls: ['./navbar.component.css'],
 })
 export class NavbarComponent {
-  // lógica do componente aqui
+  constructor(public authService: AuthService) {}
+
+  async logout(): Promise<void> {
+    try {
+      await this.authService.logout();
+    } catch (error) {
+      console.error('Erro ao fazer logout:', error);
+    }
+  }
 }
