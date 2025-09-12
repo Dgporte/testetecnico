@@ -3,6 +3,7 @@ import {
   collection,
   addDoc,
   getDocs,
+  getDoc,
   doc,
   updateDoc,
   deleteDoc,
@@ -31,6 +32,7 @@ export interface Funcionario {
   cidade: string;
   estado: string;
   foto?: string;
+  ativo?: string;
   dataCadastro?: Date;
 }
 
@@ -71,6 +73,24 @@ export class FirestoreFuncionarioService {
           } as Funcionario);
         });
         return funcionarios;
+      })
+    );
+  }
+
+  obterFuncionario(id: string): Observable<Funcionario> {
+    const docRef = doc(db, this.collectionName, id);
+    return from(getDoc(docRef)).pipe(
+      map((docSnap) => {
+        if (docSnap.exists()) {
+          const data = docSnap.data();
+          return {
+            id: docSnap.id,
+            ...data,
+            dataCadastro: data['dataCadastro']?.toDate(),
+          } as Funcionario;
+        } else {
+          throw new Error('Funcionário não encontrado');
+        }
       })
     );
   }

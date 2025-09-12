@@ -1,10 +1,9 @@
-<div class="cadastro-container">
+<div class="global-background cadastro-container">
   <app-navbar></app-navbar>
-  <div class="stars"></div>
-  <div class="stars2"></div>
-  <div class="stars3"></div>
-  <div class="cadastro-content">
-    <h2 class="cadastro-title">Cadastro de Funcionário</h2>
+  <div class="page-container cadastro-content">
+    <h2 class="cadastro-title">
+      {{ isEditMode ? "Editar Funcionário" : "Cadastro de Funcionário" }}
+    </h2>
     <form
       class="cadastro-form"
       (submit)="cadastrarFuncionario(); $event.preventDefault()"
@@ -216,7 +215,15 @@
 
       <div class="button-group">
         <button class="cadastro-button" type="submit" [disabled]="isLoading">
-          {{ isLoading ? "Cadastrando..." : "Cadastrar Funcionário" }}
+          {{
+            isLoading
+              ? isEditMode
+                ? "Atualizando..."
+                : "Cadastrando..."
+              : isEditMode
+              ? "Atualizar Funcionário"
+              : "Cadastrar Funcionário"
+          }}
         </button>
         <button
           class="cadastro-button-secondary"

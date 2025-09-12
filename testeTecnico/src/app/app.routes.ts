@@ -1,15 +1,24 @@
 import { Routes } from '@angular/router';
-import { LoginComponent } from '../login/login.component';
-import { CadastroComponent } from '../cadastro/cadastro.component';
-import { ListaFuncionariosComponent } from '../lista-funcionarios/lista-funcionarios.component';
 import { AuthGuard } from './guards/auth.guard';
 
 export const routes: Routes = [
-  { path: 'login', component: LoginComponent },
-  { path: 'cadastro', component: CadastroComponent, canActivate: [AuthGuard] },
+  {
+    path: 'login',
+    loadComponent: () =>
+      import('../login/login.component').then((m) => m.LoginComponent),
+  },
+  {
+    path: 'cadastro',
+    loadComponent: () =>
+      import('../cadastro/cadastro.component').then((m) => m.CadastroComponent),
+    canActivate: [AuthGuard],
+  },
   {
     path: 'lista-funcionarios',
-    component: ListaFuncionariosComponent,
+    loadComponent: () =>
+      import('../lista-funcionarios/lista-funcionarios.component').then(
+        (m) => m.ListaFuncionariosComponent
+      ),
     canActivate: [AuthGuard],
   },
   {

@@ -1,0 +1,16 @@
+{
+  "name": "Sistema RH - Gestão de Funcionários",
+  "short_name": "Sistema RH",
+  "theme_color": "#1570ef",
+  "background_color": "#0c0c0c",
+  "display": "standalone",
+  "scope": "./",
+  "start_url": "./",
+  "icons": [
+    {
+      "src": "favicon.ico",
+      "sizes": "16x16",
+      "type": "image/x-icon"
+    }
+  ]
+}

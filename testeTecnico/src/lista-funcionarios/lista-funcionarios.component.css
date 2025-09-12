@@ -1,105 +1,14 @@
 .lista-container {
-  background: linear-gradient(
-    45deg,
-    #0c0c0c 0%,
-    #1a1a2e 25%,
-    #16213e 50%,
-    #0f3460 75%,
-    #533483 100%
-  );
-  background-size: 400% 400%;
-  animation: gradientShift 15s ease infinite;
   min-height: 100vh;
   width: 100vw;
   margin-top: 0;
   padding: 20px;
-  border: none;
   position: relative;
   top: 0;
   left: 0;
   overflow-y: auto;
-}
-
-@keyframes gradientShift {
-  0% {
-    background-position: 0% 50%;
-  }
-  50% {
-    background-position: 100% 50%;
-  }
-  100% {
-    background-position: 0% 50%;
-  }
-}
-
-.stars,
-.stars2,
-.stars3 {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  animation: float 6s ease-in-out infinite;
-}
-
-.stars {
-  background: transparent;
-  box-shadow: 1580px 700px #fff, 1280px 1563px #fff, 1300px 1000px #fff,
-    300px 800px #fff, 1500px 200px #fff, 800px 1600px #fff, 550px 300px #fff,
-    1200px 1200px #fff, 200px 600px #fff, 1600px 500px #fff, 700px 1400px #fff,
-    400px 900px #fff, 1100px 300px #fff, 1800px 1300px #fff, 600px 1500px #fff,
-    1400px 800px #fff, 100px 1200px #fff, 900px 400px #fff, 1700px 900px #fff,
-    500px 700px #fff, 1000px 1500px #fff, 1500px 600px #fff, 300px 1100px #fff,
-    800px 200px #fff, 1200px 900px #fff, 1600px 1400px #fff, 400px 500px #fff,
-    700px 800px #fff, 1100px 700px #fff, 1800px 400px #fff;
-  animation: twinkle 3s linear infinite;
-}
-
-.stars2 {
-  background: transparent;
-  box-shadow: 700px 1200px #fff, 1400px 400px #fff, 200px 1500px #fff,
-    1600px 800px #fff, 500px 600px #fff, 1000px 1300px #fff, 800px 500px #fff,
-    1200px 1100px #fff, 300px 900px #fff, 1500px 300px #fff, 600px 1400px #fff,
-    900px 700px #fff, 1700px 1000px #fff, 400px 1200px #fff, 1100px 500px #fff,
-    1300px 1400px #fff, 100px 800px #fff, 1600px 600px #fff, 800px 1100px #fff,
-    1400px 900px #fff, 500px 400px #fff, 1000px 800px #fff, 1800px 1200px #fff,
-    300px 600px #fff, 700px 1300px #fff, 1500px 1000px #fff, 200px 400px #fff,
-    600px 1600px #fff, 1200px 200px #fff, 1700px 700px #fff;
-  animation: twinkle 2s linear infinite;
-}
-
-.stars3 {
-  background: transparent;
-  box-shadow: 1000px 900px #fff, 300px 1300px #fff, 1500px 500px #fff,
-    800px 1200px #fff, 1700px 300px #fff, 400px 800px #fff, 1200px 600px #fff,
-    600px 1500px #fff, 1400px 1100px #fff, 200px 700px #fff, 1600px 900px #fff,
-    900px 1400px #fff, 500px 1000px #fff, 1100px 400px #fff, 1800px 800px #fff,
-    700px 500px #fff, 1300px 1200px #fff, 100px 1100px #fff, 1500px 700px #fff,
-    800px 300px #fff, 400px 1400px #fff, 1000px 600px #fff, 1600px 1300px #fff,
-    300px 500px #fff, 600px 900px #fff, 1400px 200px #fff, 1200px 1000px #fff,
-    500px 1200px #fff, 900px 800px #fff, 1700px 600px #fff;
-  animation: twinkle 4s linear infinite;
-}
-
-@keyframes twinkle {
-  0%,
-  100% {
-    opacity: 0.3;
-  }
-  50% {
-    opacity: 1;
-  }
-}
-
-@keyframes float {
-  0%,
-  100% {
-    transform: translateY(0px);
-  }
-  50% {
-    transform: translateY(-10px);
-  }
+  scrollbar-width: none;
+  -ms-overflow-style: none;
 }
 
 .lista-content {
@@ -126,19 +35,15 @@
 }
 
 .funcionario-card {
-  background: rgba(255, 255, 255, 0.1);
-  backdrop-filter: blur(10px);
-  -webkit-backdrop-filter: blur(10px);
-  border: 1px solid rgba(255, 255, 255, 0.2);
-  border-radius: 16px;
-  padding: 20px;
-  box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
-  transition: transform 0.2s ease, box-shadow 0.2s ease;
+  background: #1a1f26;
+  border: 1px solid #2a3441;
+  border-radius: 4px;
+  padding: 16px;
+  contain: layout style paint;
 }
 
 .funcionario-card:hover {
-  transform: translateY(-5px);
-  box-shadow: 0 12px 40px 0 rgba(31, 38, 135, 0.5);
+  background: #1e242b;
 }
 
 .funcionario-header {
@@ -223,11 +128,10 @@
   flex: 1;
   padding: 8px 12px;
   border: none;
-  border-radius: 8px;
+  border-radius: 4px;
   font-family: "Poppins", sans-serif;
-  font-size: 14px;
+  font-size: 12px;
   cursor: pointer;
-  transition: all 0.3s ease;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -242,7 +146,6 @@
 
 .btn-editar:hover {
   background-color: rgba(59, 130, 246, 0.3);
-  transform: translateY(-1px);
 }
 
 .btn-excluir {
@@ -253,14 +156,11 @@
 
 .btn-excluir:hover {
   background-color: rgba(239, 68, 68, 0.3);
-  transform: translateY(-1px);
 }
 
 .lista-vazia {
   text-align: center;
   background: rgba(255, 255, 255, 0.1);
-  backdrop-filter: blur(10px);
-  -webkit-backdrop-filter: blur(10px);
   border: 1px solid rgba(255, 255, 255, 0.2);
   border-radius: 16px;
   padding: 40px;
@@ -317,9 +217,9 @@
 .search-box {
   display: flex;
   align-items: center;
-  background: rgba(255, 255, 255, 0.1);
-  border: 1px solid rgba(255, 255, 255, 0.2);
-  border-radius: 8px;
+  background: #2a3441;
+  border: 1px solid #3a4752;
+  border-radius: 4px;
   overflow: hidden;
   flex: 1;
   min-width: 300px;
@@ -341,28 +241,26 @@
 }
 
 .search-button {
-  background: #1570ef;
+  background: none;
   border: none;
   color: white;
-  padding: 15px 15px;
+  padding: 12px;
   cursor: pointer;
-  transition: background-color 0.3s ease;
 }
 
 .search-button:hover {
-  background: #0d4797;
+  color: #006aff;
 }
 
 .btn-adicionar-header {
   background: #28a745;
   color: white;
   border: none;
-  border-radius: 8px;
-  padding: 14px 20px;
+  border-radius: 4px;
+  padding: 12px 16px;
   font-family: "Poppins", sans-serif;
   font-weight: 500;
   cursor: pointer;
-  transition: all 0.3s ease;
   display: flex;
   align-items: center;
   gap: 8px;
