@@ -1,8 +1,5 @@
-<div class="login-container">
-  <div class="stars"></div>
-  <div class="stars2"></div>
-  <div class="stars3"></div>
-  <div class="login-content">
+<div class="global-background login-container">
+  <div class="page-container login-content">
     <h2 class="login-title">Login Administrativo</h2>
     <form class="login-form" (submit)="onLogin(); $event.preventDefault()">
       <div *ngIf="errorMessage" class="error-message">
@@ -11,7 +8,7 @@
 
       <label for="email">Email</label>
       <input
-        class="login-input"
+        class="input-glass"
         type="email"
         id="email"
         name="email"
@@ -25,7 +22,7 @@
       <label for="password">Senha</label>
       <div class="password-container">
         <input
-          class="login-input password-input"
+          class="input-glass password-input"
           [type]="showPassword ? 'text' : 'password'"
           id="password"
           name="password"

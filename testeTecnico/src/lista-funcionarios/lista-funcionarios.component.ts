@@ -62,7 +62,7 @@ export class ListaFuncionariosComponent implements OnInit {
 
   editarFuncionario(id: string) {
     console.log('Editar funcionário:', id);
-    alert('Funcionalidade de edição será implementada em breve!');
+    this.router.navigate(['/cadastro'], { queryParams: { id: id } });
   }
 
   excluirFuncionario(funcionario: Funcionario) {

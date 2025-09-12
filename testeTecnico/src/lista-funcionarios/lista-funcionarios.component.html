@@ -1,9 +1,6 @@
 <app-navbar></app-navbar>
-<div class="lista-container">
-  <div class="stars"></div>
-  <div class="stars2"></div>
-  <div class="stars3"></div>
-  <div class="lista-content">
+<div class="global-background lista-container">
+  <div class="page-container lista-content">
     <h2 class="lista-title">Funcionários Cadastrados</h2>
 
     <div class="search-container">
@@ -43,6 +40,8 @@
                 'data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iNDAiIGhlaWdodD0iNDAiIHZpZXdCb3g9IjAgMCA0MCA0MCIgZmlsbD0ibm9uZSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KPGNpcmNsZSBjeD0iMjAiIGN5PSIyMCIgcj0iMjAiIGZpbGw9IiM2ODcwN0EiLz4KPGNpcmNsZSBjeD0iMjAiIGN5PSIxNiIgcj0iNiIgZmlsbD0id2hpdGUiLz4KPHBhdGggZD0iTTEwIDMwQzEwIDI2LjY4NjMgMTMuMTM0IDI0IDIwIDI0QzI2Ljg2NiAyNCAzMCAyNi42ODYzIDMwIDMwVjMySDEwVjMwWiIgZmlsbD0id2hpdGUiLz4KPC9zdmc+'
               "
               [alt]="funcionario.nome"
+              loading="lazy"
+              decoding="async"
             />
           </div>
           <div class="funcionario-info">
