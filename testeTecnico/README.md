@@ -26,12 +26,14 @@ Um sistema completo de gestão de funcionários desenvolvido com Angular 18, Nod
 ## 🎯 Funcionalidades
 
 ### 🔐 Autenticação
+
 - ✅ Login exclusivo para administradores (`admin@email.com`)
 - ✅ Proteção de rotas com guards
 - ✅ Logout seguro
 - ✅ Persistência de sessão
 
 ### 👥 Gestão de Funcionários
+
 - ✅ **Cadastrar** novos funcionários
 - ✅ **Listar** todos os funcionários
 - ✅ **Editar** informações existentes
@@ -40,6 +42,7 @@ Um sistema completo de gestão de funcionários desenvolvido com Angular 18, Nod
 - ✅ **Validação** completa de formulários
 
 ### 🎨 Interface
+
 - ✅ Design moderno com **Glass Morphism**
 - ✅ Layout responsivo (mobile-first)
 - ✅ Animações suaves
@@ -47,6 +50,7 @@ Um sistema completo de gestão de funcionários desenvolvido com Angular 18, Nod
 - ✅ Loading states e mensagens de erro
 
 ### 🔧 Técnicas
+
 - ✅ API RESTful completa
 - ✅ Arquitetura MVC no backend
 - ✅ TypeScript em todo o projeto
@@ -64,12 +68,14 @@ Um sistema completo de gestão de funcionários desenvolvido com Angular 18, Nod
 ```
 
 ### Frontend (Angular 18)
+
 - **Components**: Componentes standalone modulares
 - **Services**: Gerenciamento de estado e API calls
 - **Guards**: Proteção de rotas
 - **Interfaces**: Tipagem forte com TypeScript
 
 ### Backend (Node.js + Express)
+
 - **Controllers**: Gerenciam requisições HTTP
 - **Services**: Lógica de negócio
 - **Models**: Definições de tipos e DTOs
@@ -78,45 +84,51 @@ Um sistema completo de gestão de funcionários desenvolvido com Angular 18, Nod
 ## ⚡ Tecnologias
 
 ### Frontend
-| Tecnologia | Versão | Uso |
-|------------|--------|-----|
-| **Angular** | 18.x | Framework principal |
-| **TypeScript** | 5.x | Linguagem |
-| **Firebase** | 10.x | Autenticação e Database |
-| **RxJS** | 7.x | Programação reativa |
-| **CSS3** | - | Estilização + Glass Morphism |
+
+| Tecnologia     | Versão | Uso                          |
+| -------------- | ------ | ---------------------------- |
+| **Angular**    | 18.x   | Framework principal          |
+| **TypeScript** | 5.x    | Linguagem                    |
+| **Firebase**   | 10.x   | Autenticação e Database      |
+| **RxJS**       | 7.x    | Programação reativa          |
+| **CSS3**       | -      | Estilização + Glass Morphism |
 
 ### Backend
-| Tecnologia | Versão | Uso |
-|------------|--------|-----|
-| **Node.js** | 18.x | Runtime |
-| **Express** | 4.x | Framework web |
-| **TypeScript** | 5.x | Linguagem |
-| **UUID** | 9.x | Geração de IDs únicos |
-| **CORS** | 2.x | Cross-Origin Resource Sharing |
+
+| Tecnologia     | Versão | Uso                           |
+| -------------- | ------ | ----------------------------- |
+| **Node.js**    | 18.x   | Runtime                       |
+| **Express**    | 4.x    | Framework web                 |
+| **TypeScript** | 5.x    | Linguagem                     |
+| **UUID**       | 9.x    | Geração de IDs únicos         |
+| **CORS**       | 2.x    | Cross-Origin Resource Sharing |
 
 ### DevOps
-| Tecnologia | Versão | Uso |
-|------------|--------|-----|
-| **Docker** | 24.x | Containerização |
-| **Nginx** | Alpine | Servidor web |
-| **Git** | 2.x | Controle de versão |
+
+| Tecnologia | Versão | Uso                |
+| ---------- | ------ | ------------------ |
+| **Docker** | 24.x   | Containerização    |
+| **Nginx**  | Alpine | Servidor web       |
+| **Git**    | 2.x    | Controle de versão |
 
 ## 🚀 Como Executar
 
 ### Pré-requisitos
-- **Node.js** 18+ 
+
+- **Node.js** 18+
 - **npm** ou **yarn**
 - **Git**
 - **Docker** (opcional)
 
 ### 1️⃣ Clone o Repositório
+
 ```bash
 git clone https://github.com/Dgporte/testetecnico
 cd teste-tecnico
 ```
 
 ### 2️⃣ Frontend (Angular)
+
 ```bash
 # Instalar dependências
 npm install
@@ -131,6 +143,7 @@ npm start
 ```
 
 ### 3️⃣ Backend (Node.js)
+
 ```bash
 # Navegar para o diretório do backend
 cd backend
@@ -145,6 +158,7 @@ npm run dev
 ```
 
 ### 4️⃣ Credenciais de Acesso
+
 ```
 Email: admin@email.com
 Senha: [qualquer senha - Firebase auth customizada]
@@ -153,6 +167,7 @@ Senha: [qualquer senha - Firebase auth customizada]
 ## 🐳 Docker
 
 ### Desenvolvimento com Docker Compose
+
 ```bash
 # Executar todo o stack
 docker-compose up -d
@@ -165,6 +180,7 @@ docker-compose down
 ```
 
 ### Build para Produção
+
 ```bash
 # Build da imagem
 docker build -t funcionarios-app .
@@ -174,18 +190,22 @@ docker run -p 80:80 funcionarios-app
 ```
 
 ### Multi-stage Build
+
 O Dockerfile utiliza multi-stage build para otimização:
+
 - **Stage 1**: Build do Angular com Node.js
 - **Stage 2**: Servir com Nginx Alpine (imagem final ~15MB)
 
 ## 🔥 Firebase Setup
 
 ### 1️⃣ Criar Projeto Firebase
+
 1. Acesse [Firebase Console](https://console.firebase.google.com)
 2. Crie um novo projeto
 3. Ative Authentication e Firestore
 
 ### 2️⃣ Configurar Authentication
+
 ```javascript
 // src/app/firebase.config.ts
 export const firebaseConfig = {
@@ -194,11 +214,12 @@ export const firebaseConfig = {
   projectId: "seu-projeto-id",
   storageBucket: "seu-projeto.appspot.com",
   messagingSenderId: "123456789",
-  appId: "sua-app-id"
+  appId: "sua-app-id",
 };
 ```
 
 ### 3️⃣ Configurar Regras Firestore
+
 ```javascript
 // Firestore Rules
 rules_version = '2';
@@ -212,6 +233,7 @@ service cloud.firestore {
 ```
 
 ### 4️⃣ Usuário Admin
+
 ```javascript
 // No Firebase Console > Authentication > Users
 // Criar usuário com email: admin@email.com
@@ -220,6 +242,7 @@ service cloud.firestore {
 ## 📡 API Documentation
 
 ### Base URL
+
 ```
 http://localhost:3000/api
 ```
@@ -228,18 +251,19 @@ http://localhost:3000/api
 
 #### 👥 Funcionários
 
-| Método | Endpoint | Descrição | Body |
-|--------|----------|-----------|------|
-| `GET` | `/funcionarios` | Listar todos | - |
-| `GET` | `/funcionarios/:id` | Buscar por ID | - |
-| `POST` | `/funcionarios` | Criar novo | CreateFuncionarioDto |
-| `PUT` | `/funcionarios/:id` | Atualizar | UpdateFuncionarioDto |
-| `DELETE` | `/funcionarios/:id` | Excluir | - |
-| `GET` | `/funcionarios/search?q=termo` | Pesquisar | - |
+| Método   | Endpoint                       | Descrição     | Body                 |
+| -------- | ------------------------------ | ------------- | -------------------- |
+| `GET`    | `/funcionarios`                | Listar todos  | -                    |
+| `GET`    | `/funcionarios/:id`            | Buscar por ID | -                    |
+| `POST`   | `/funcionarios`                | Criar novo    | CreateFuncionarioDto |
+| `PUT`    | `/funcionarios/:id`            | Atualizar     | UpdateFuncionarioDto |
+| `DELETE` | `/funcionarios/:id`            | Excluir       | -                    |
+| `GET`    | `/funcionarios/search?q=termo` | Pesquisar     | -                    |
 
 #### 📋 DTOs
 
 **CreateFuncionarioDto**
+
 ```typescript
 {
   nome: string;
@@ -253,6 +277,7 @@ http://localhost:3000/api
 ```
 
 **UpdateFuncionarioDto**
+
 ```typescript
 {
   nome?: string;
@@ -268,6 +293,7 @@ http://localhost:3000/api
 #### 📤 Respostas
 
 **Sucesso**
+
 ```json
 {
   "success": true,
@@ -277,6 +303,7 @@ http://localhost:3000/api
 ```
 
 **Erro**
+
 ```json
 {
   "success": false,
@@ -288,6 +315,7 @@ http://localhost:3000/api
 ### 🧪 Exemplos de Uso
 
 #### Criar Funcionário
+
 ```bash
 curl -X POST http://localhost:3000/api/funcionarios \
   -H "Content-Type: application/json" \
@@ -303,6 +331,7 @@ curl -X POST http://localhost:3000/api/funcionarios \
 ```
 
 #### Pesquisar Funcionários
+
 ```bash
 curl "http://localhost:3000/api/funcionarios/search?q=joão"
 ```
@@ -310,6 +339,7 @@ curl "http://localhost:3000/api/funcionarios/search?q=joão"
 ## 🎨 Design System
 
 ### 🎭 Glass Morphism
+
 ```css
 .glass-effect {
   background: rgba(255, 255, 255, 0.1);
@@ -321,30 +351,41 @@ curl "http://localhost:3000/api/funcionarios/search?q=joão"
 ```
 
 ### 🎨 Paleta de Cores
+
 ```css
 :root {
-  --primary: #4f46e5;      /* Indigo */
-  --secondary: #06b6d4;    /* Cyan */
-  --success: #10b981;      /* Emerald */
-  --warning: #f59e0b;      /* Amber */
-  --error: #ef4444;        /* Red */
+  --primary: #4f46e5; /* Indigo */
+  --secondary: #06b6d4; /* Cyan */
+  --success: #10b981; /* Emerald */
+  --warning: #f59e0b; /* Amber */
+  --error: #ef4444; /* Red */
   --glass-bg: rgba(255, 255, 255, 0.1);
   --glass-border: rgba(255, 255, 255, 0.2);
 }
 ```
 
 ### 📱 Breakpoints
+
 ```css
 /* Mobile First */
-@media (min-width: 640px)  { /* sm */ }
-@media (min-width: 768px)  { /* md */ }
-@media (min-width: 1024px) { /* lg */ }
-@media (min-width: 1280px) { /* xl */ }
+@media (min-width: 640px) {
+  /* sm */
+}
+@media (min-width: 768px) {
+  /* md */
+}
+@media (min-width: 1024px) {
+  /* lg */
+}
+@media (min-width: 1280px) {
+  /* xl */
+}
 ```
 
 ## 🧪 Testes
 
 ### Frontend
+
 ```bash
 # Testes unitários
 ng test
@@ -357,6 +398,7 @@ ng test --code-coverage
 ```
 
 ### Backend
+
 ```bash
 cd backend
 
@@ -409,6 +451,7 @@ testeTecnico/
 ## 🏭 Pipeline de Deploy
 
 ### 1️⃣ Build
+
 ```bash
 # Frontend
 ng build --configuration production
@@ -418,12 +461,14 @@ npm run build
 ```
 
 ### 2️⃣ Docker
+
 ```bash
 # Multi-stage build otimizado
 docker build -t funcionarios-app .
 ```
 
 ### 3️⃣ Deploy
+
 ```bash
 # Docker Compose
 docker-compose -f docker-compose-full.yml up -d
@@ -435,6 +480,7 @@ docker run -d -p 80:80 funcionarios-app
 ## 🔧 Scripts Disponíveis
 
 ### Frontend
+
 ```json
 {
   "start": "ng serve",
@@ -446,6 +492,7 @@ docker run -d -p 80:80 funcionarios-app
 ```
 
 ### Backend
+
 ```json
 {
   "dev": "ts-node-dev --respawn src/server.ts",
@@ -458,12 +505,14 @@ docker run -d -p 80:80 funcionarios-app
 ## 🚀 Performance
 
 ### Lighthouse Scores
+
 - **Performance**: 90+
 - **Accessibility**: 95+
 - **Best Practices**: 95+
 - **SEO**: 90+
 
 ### Otimizações Implementadas
+
 - ✅ Lazy loading de rotas
 - ✅ OnPush change detection
 - ✅ Tree shaking automático
@@ -474,12 +523,14 @@ docker run -d -p 80:80 funcionarios-app
 ## 🔐 Segurança
 
 ### Frontend
+
 - ✅ Sanitização de inputs
 - ✅ Guards de autenticação
 - ✅ HTTPS enforced
 - ✅ CSP headers
 
 ### Backend
+
 - ✅ CORS configurado
 - ✅ Rate limiting
 - ✅ Input validation
@@ -490,6 +541,7 @@ docker run -d -p 80:80 funcionarios-app
 ### Problemas Comuns
 
 #### Firebase não conecta
+
 ```bash
 # Verificar configuração
 console.log(firebaseConfig);
@@ -499,6 +551,7 @@ console.log(firebaseConfig);
 ```
 
 #### Erro de CORS
+
 ```bash
 # Backend deve estar rodando na porta 3000
 # Frontend deve estar rodando na porta 4200
@@ -506,6 +559,7 @@ console.log(firebaseConfig);
 ```
 
 #### Docker não builda
+
 ```bash
 # Limpar cache
 docker system prune -a
@@ -517,6 +571,7 @@ docker-compose build --no-cache
 ## 🤝 Contribuição
 
 ### Como Contribuir
+
 1. Fork o projeto
 2. Crie uma branch para sua feature (`git checkout -b feature/AmazingFeature`)
 3. Commit suas mudanças (`git commit -m 'Add some AmazingFeature'`)
@@ -524,12 +579,14 @@ docker-compose build --no-cache
 5. Abra um Pull Request
 
 ### Padrões de Código
+
 - ✅ TypeScript strict mode
 - ✅ ESLint + Prettier
 - ✅ Conventional Commits
 - ✅ Testes obrigatórios
 
 ### Estrutura de Commits
+
 ```
 feat: adiciona nova funcionalidade
 fix: corrige bug
@@ -553,6 +610,7 @@ chore: tarefas de manutenção
 ## 📈 Roadmap
 
 ### Próximas Features
+
 - [ ] **Dashboard** com métricas
 - [ ] **Relatórios** em PDF
 - [ ] **Notificações** push
@@ -561,6 +619,7 @@ chore: tarefas de manutenção
 - [ ] **Mobile App** (Ionic/React Native)
 
 ### Melhorias Técnicas
+
 - [ ] **Testes E2E** com Cypress
 - [ ] **Storybook** para componentes
 - [ ] **Microfrontends** arquitetura
@@ -571,6 +630,7 @@ chore: tarefas de manutenção
 ## 👥 Time
 
 ### Desenvolvedor Principal
+
 - **Nome**: Diogo Porte
 - **Email**: degevg1898@icloud.com
 - **GitHub**: [@Dgporte](https://github.com/Dgporte)
@@ -581,5 +641,3 @@ chore: tarefas de manutenção
 Este projeto está sob a licença MIT. Veja o arquivo [LICENSE](LICENSE) para mais detalhes.
 
 ---
-
-
