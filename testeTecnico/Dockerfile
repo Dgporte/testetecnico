@@ -1,10 +1,10 @@
-FROM node:18-alpine AS build
+FROM node:20-alpine AS build
 
 WORKDIR /app
 
 COPY package*.json ./
 
-RUN npm ci --only=production
+RUN npm install
 
 COPY . .
 
@@ -13,7 +13,7 @@ RUN npm run build --prod
 FROM nginx:alpine
 
 
-COPY --from=build /app/dist/teste-tecnico /usr/share/nginx/html
+COPY --from=build /app/dist/teste-tecnico/browser /usr/share/nginx/html
 
 
 COPY nginx.conf /etc/nginx/nginx.conf
