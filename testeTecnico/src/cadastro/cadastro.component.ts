@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { inject } from '@angular/core';
+import { CommonModule } from '@angular/common';
 import {
   FirestoreFuncionarioService,
   Funcionario,
@@ -10,7 +11,7 @@ import { NavbarComponent } from '../navbar/navbar.component';
 
 @Component({
   selector: 'app-cadastro',
-  imports: [NavbarComponent],
+  imports: [NavbarComponent, CommonModule],
   templateUrl: './cadastro.component.html',
   styleUrl: './cadastro.component.css',
 })
